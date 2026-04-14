@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
-    [SerializeField] string sceneToLoad = "SampleScene";
+    [SerializeField] string sceneToLoad = "";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,6 +29,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void OnStart()
     {
+        Debug.Log($"Starting game... Loading scene: {sceneToLoad}");
         SceneManager.LoadScene(sceneToLoad);
     }
 }
