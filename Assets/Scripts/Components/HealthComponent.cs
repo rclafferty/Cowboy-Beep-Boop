@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthComponent : MonoBehaviour
 {
     [SerializeField] GameObject healthBar;
     [SerializeField] int currentHealth = 10;
     [SerializeField] int maxHealth = 10;
+
+    [SerializeField] public UnityEvent OnDeath;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,6 +49,11 @@ public class HealthComponent : MonoBehaviour
         Debug.Log($"{gameObject.name} took {amount} damage!");
         currentHealth = Mathf.Clamp(currentHealth - amount, 0, maxHealth);
         UpdateHealthbar();
+
+        if (currentHealth <= 0)
+        {
+            OnDeath?.Invoke();
+        }
     }
 
     void UpdateHealthbar()

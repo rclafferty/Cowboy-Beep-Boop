@@ -53,6 +53,7 @@ MonoBehaviour:
   movement: {x: 0, y: 0, z: 0}
   speed: 2
   health: {fileID: 0}
+  bullet: {fileID: 8269741586685767968, guid: d6b42c8f901282249a3a5492ef6da12d, type: 3}
 --- !u!114 &624314116557242322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +99,21 @@ MonoBehaviour:
   healthBar: {fileID: 5636796641579125202}
   currentHealth: 10
   maxHealth: 10
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8510225799394819706}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &2824826537099167853
 Rigidbody2D:
   serializedVersion: 5

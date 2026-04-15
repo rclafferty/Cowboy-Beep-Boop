@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] public List<GameObject> objectsToIgnore;
+    [SerializeField] public ICombat instigator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +22,13 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (objectsToIgnore.Contains<GameObject>(collision.gameObject))
+            return;
+
+        ICombat combat = collision.GetComponent<ICombat>();
+        if (combat == null)
+            return;
+
+        if (combat.GetTeam() == instigator.GetTeam())
             return;
 
         Destroy(gameObject);

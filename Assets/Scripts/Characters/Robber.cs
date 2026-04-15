@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Robber : MonoBehaviour
+public class Robber : MonoBehaviour, ICombat
 {
     [SerializeField] Player player;
     [SerializeField] GameObject bullet;
@@ -16,6 +16,7 @@ public class Robber : MonoBehaviour
     {
         player = FindAnyObjectByType<Player>();
         health = GetComponent<HealthComponent>();
+        health.OnDeath.AddListener(Die);
     }
 
     // Update is called once per frame
@@ -59,6 +60,7 @@ public class Robber : MonoBehaviour
         GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.Euler(directionToPlayer.x, 0, directionToPlayer.y));
         Bullet bulletComponent = newBullet.GetComponent<Bullet>();
         bulletComponent.objectsToIgnore.Add(gameObject);
+        bulletComponent.instigator = this;
         newBullet.transform.up = directionToPlayer;
     }
 
@@ -75,5 +77,23 @@ public class Robber : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health.TakeDamage(amount);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Bullet bulletComp = collision.GetComponent<Bullet>();
+        if (bulletComp == null)
+            return;
+
+        if (bulletComp.instigator.GetTeam() == GetTeam())
+            return;
+
+        health.TakeDamage(1);
+        Debug.Log($"Robber {gameObject.name} took {1} damage -- HP: {health.GetCurrentHealth()}");
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }
