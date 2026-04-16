@@ -15,7 +15,16 @@ public class DialogueUI : MonoBehaviour
         public string line;
     }
 
+    [Serializable]
+    struct DialogueEvent
+    {
+        public int lineIndex;
+        public UnityEvent onLineReached;
+    }
+
     [SerializeField] List<DialogueLine> allDialogueLines;
+    [SerializeField] List<DialogueEvent> allDialogueEvents;
+    [SerializeField] TextAsset dialogueFile;
 
     [SerializeField] bool typewriterEffect = true;
     [SerializeField] float typewriterSpeed = 0.05f;
@@ -24,16 +33,33 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI speakerLine;
     int currentLineIndex = -1;
 
-    [SerializeField] int mountainIndexStart = 0;
-    [SerializeField] int mountainIndexEnd = 0;
-    [SerializeField] Vector3 preMountainLocation;
-    [SerializeField] Vector3 mountainLocation;
-
     [SerializeField] UnityEvent onDialogueEnd;
+    [SerializeField] UnityEvent onDialogueStart;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (dialogueFile == null)
+        {
+            Debug.LogError("Dialogue file not assigned!");
+        }
+        else
+        {
+            string[] allLines = dialogueFile.text.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+            allDialogueLines.Clear();
+            foreach (string l in allLines)
+            {
+                string[] split = l.Split(new[] { ':' }, 2);
+                if (split.Length < 2)
+                    continue;
+
+                DialogueLine line = new DialogueLine();
+                line.speaker = split[0].Trim();
+                line.line = split[1].Trim();
+                allDialogueLines.Add(line);
+            }
+        }
+
         StartDialogue();
     }
 
@@ -93,21 +119,32 @@ public class DialogueUI : MonoBehaviour
         DialogueLine line = GetLine();
         speakerLine.text = "";
 
-        if (currentLineIndex == mountainIndexStart)
+        //if (currentLineIndex == mountainIndexStart)
+        //{
+        //    CinematicCamera camera = FindFirstObjectByType<CinematicCamera>();
+        //    if (camera)
+        //    {
+        //        preMountainLocation = camera.transform.position;
+        //        camera.LerpToPosition(mountainLocation, 2f);
+        //    }
+        //}
+        //else if (currentLineIndex == mountainIndexEnd)
+        //{
+        //    CinematicCamera camera = FindFirstObjectByType<CinematicCamera>();
+        //    if (camera)
+        //    {
+        //        camera.LerpToPosition(preMountainLocation, 2f);
+        //    }
+        //}
+
+        if (allDialogueEvents != null)
         {
-            CinematicCamera camera = FindFirstObjectByType<CinematicCamera>();
-            if (camera)
+            foreach (DialogueEvent dialogueEvent in allDialogueEvents)
             {
-                preMountainLocation = camera.transform.position;
-                camera.LerpToPosition(mountainLocation, 2f);
-            }
-        }
-        else if (currentLineIndex == mountainIndexEnd)
-        {
-            CinematicCamera camera = FindFirstObjectByType<CinematicCamera>();
-            if (camera)
-            {
-                camera.LerpToPosition(preMountainLocation, 2f);
+                if (dialogueEvent.lineIndex == currentLineIndex)
+                {
+                    dialogueEvent.onLineReached?.Invoke();
+                }
             }
         }
 

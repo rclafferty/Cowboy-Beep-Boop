@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class OpeningSequence : MonoBehaviour
 {
+    [SerializeField] string nextSceneName = "";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +18,6 @@ public class OpeningSequence : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(nextSceneName);
     }
 }

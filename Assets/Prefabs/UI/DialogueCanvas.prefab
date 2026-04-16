@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 75.33652}
-  m_SizeDelta: {x: -45.7521, y: 150.6731}
+  m_AnchoredPosition: {x: 0, y: 122.62683}
+  m_SizeDelta: {x: -45.7521, y: 245.2538}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4533169036819712145
 CanvasRenderer:
@@ -112,8 +112,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 63.672, y: -27}
-  m_SizeDelta: {x: 87.4744, y: 22.796}
+  m_AnchoredPosition: {x: 130.7, y: -35.268}
+  m_SizeDelta: {x: 178.6973, y: 22.796}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &876362100704798136
 CanvasRenderer:
@@ -170,8 +170,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -331,10 +331,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueUI
   allDialogueLines: []
+  dialogueFile: {fileID: 0}
   typewriterEffect: 1
-  typewriterSpeed: 0.05
+  typewriterSpeed: 0.01
   speakerName: {fileID: 5703093047996101236}
   speakerLine: {fileID: 4833058124993201566}
+  mountainIndexStart: 0
+  mountainIndexEnd: 0
+  preMountainLocation: {x: 0, y: 0, z: 0}
+  mountainLocation: {x: 0, y: 0, z: 0}
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7608027882969051043
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,8 +377,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 57.2827, y: -85.537}
-  m_SizeDelta: {x: -141.4717, y: 77.742}
+  m_AnchoredPosition: {x: 138.04004, y: -127.00696}
+  m_SizeDelta: {x: -302.9863, y: 160.6819}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1350570322127276878
 CanvasRenderer:
@@ -427,8 +435,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -506,8 +514,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 64.04999, y: -85.2}
-  m_SizeDelta: {x: 77.74158, y: 77.74161}
+  m_AnchoredPosition: {x: 109.27997, y: -132.1}
+  m_SizeDelta: {x: 135.8671, y: 135.8672}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7255628477373739727
 CanvasRenderer:

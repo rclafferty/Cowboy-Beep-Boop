@@ -1,0 +1,6 @@
+Train Dude: We are approaching the mountains. It's a clear day, but the weather can change quickly out here. We should be prepared for anything.
+Train Dude: I hope we can make it through safely. I've heard there are some dangerous creatures out there. We should be on the lookout for them.
+SC0-UT: WARNING! Hostile lifeforms detected in the vicinity. Proceed with caution.
+Train Dude: Oh no! SC0-UT, what kind of hostile lifeforms are we talking about?
+SC0-UT: Cyborg Bandits detected to the southwest. They appear to have weapons and explosives.
+Train Dude: They're going to attack the train! We need to prepare for battle. Everyone, get ready to defend yourselves!

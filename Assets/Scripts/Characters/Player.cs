@@ -9,6 +9,8 @@ public class Player : MonoBehaviour, ICombat
     [SerializeField] HealthComponent health;
     [SerializeField] GameObject bullet;
 
+    [SerializeField] bool disableControls = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,12 +26,22 @@ public class Player : MonoBehaviour, ICombat
 
     public void OnMove(InputValue value)
     {
+        if (disableControls)
+        {
+            return;
+        }
+
         movement = value.Get<Vector2>() * speed;
         Debug.Log($"Player {gameObject.name} moving: {movement}");
     }
 
     public void OnShoot(InputValue value)
     {
+        if (disableControls)
+        {
+            return;
+        }
+
         //if (!value.Get<bool>())
         //    return;
 

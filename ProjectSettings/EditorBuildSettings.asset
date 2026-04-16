@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/OpeningScene.unity
     guid: 246c0c00015da744d844a45b2a9d6f20
   - enabled: 1
+    path: Assets/Scenes/Level1Cinematic.unity
+    guid: a96e0ca5ba7a802489c58e48497ad6db
+  - enabled: 1
+    path: Assets/Scenes/Level1Instructions.unity
+    guid: 07ed65d86bfd9614ea0f023213847511
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
