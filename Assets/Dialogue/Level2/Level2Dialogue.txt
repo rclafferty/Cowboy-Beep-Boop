@@ -1,0 +1,3 @@
+Train Dude: Oh no! There's something blocking the tracks ahead! We have to stop and clear the tracks before we can continue.
+SC0-UT: WARNING! Hostile lifeforms detected in the vicinity.
+Train Dude: It's an ambush! Be alert, everyone! Defend the cargo and clear the tracks as quickly as possible!

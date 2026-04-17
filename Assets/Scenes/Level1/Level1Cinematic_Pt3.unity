@@ -484,7 +484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 993516276707506261, guid: 4e1d3336f1875974f8010b1958f38652, type: 3}
       propertyPath: nextSceneName
-      value: EndingCredits
+      value: Level2Cinematic
       objectReference: {fileID: 0}
     - target: {fileID: 3521025133264101381, guid: 4e1d3336f1875974f8010b1958f38652, type: 3}
       propertyPath: m_Name
