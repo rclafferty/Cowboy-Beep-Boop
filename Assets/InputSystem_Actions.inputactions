@@ -104,6 +104,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "AbilityShootPrep",
+                    "type": "Button",
+                    "id": "37244306-9766-4b13-b4a2-2af5a318c868",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -584,10 +593,21 @@
                     "name": "",
                     "id": "52a70e3c-9b01-4d26-aecd-91f11023f58b",
                     "path": "<Mouse>/rightButton",
-                    "interactions": "",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "AbilityShoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9ed1b173-f333-4027-b70e-870c62d2d810",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "AbilityShootPrep",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

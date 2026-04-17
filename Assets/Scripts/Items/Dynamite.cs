@@ -11,23 +11,34 @@ public class Dynamite : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (IsDud)
+            return;
+
         StartCoroutine(ExplodeAfterDelay());
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (IsDud)
+            return;
+
         transform.position += transform.up * movementSpeed * Time.deltaTime;
     }
 
     IEnumerator ExplodeAfterDelay()
     {
         yield return new WaitForSeconds(explosionFuseSec);
-        Explode();
+
+        if (!IsDud)
+            Explode();
     }
 
     private void Explode()
     {
+        if (IsDud)
+            return;
+
         // Implement explosion logic here
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (var hitCollider in hitColliders)
@@ -41,4 +52,6 @@ public class Dynamite : MonoBehaviour
     
         Destroy(gameObject); // Destroy the dynamite after exploding
     }
+
+    public bool IsDud {  get; set; }
 }
