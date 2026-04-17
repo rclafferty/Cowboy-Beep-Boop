@@ -12,11 +12,29 @@ EditorBuildSettings:
     path: Assets/Scenes/OpeningScene.unity
     guid: 246c0c00015da744d844a45b2a9d6f20
   - enabled: 1
-    path: Assets/Scenes/Level1Cinematic.unity
+    path: Assets/Scenes/Level1/Level1Cinematic.unity
     guid: a96e0ca5ba7a802489c58e48497ad6db
   - enabled: 1
-    path: Assets/Scenes/Level1Instructions.unity
+    path: Assets/Scenes/Level1/Level1Instructions.unity
     guid: 07ed65d86bfd9614ea0f023213847511
+  - enabled: 1
+    path: Assets/Scenes/Level1/Level1.unity
+    guid: 10982ff538e367649b87f03db57c520c
+  - enabled: 1
+    path: Assets/Scenes/Level1/Level1Cinematic_Pt2.unity
+    guid: 5939a452c4d84ae439fd691215cc3dbb
+  - enabled: 1
+    path: Assets/Scenes/Level1/Level1Instructions_Pt2.unity
+    guid: c7f7ed7eee249ea41b82fbc9213cb843
+  - enabled: 1
+    path: Assets/Scenes/Level1/Level1_Pt2.unity
+    guid: de11db20527955e4ebfb60e3c9e7b523
+  - enabled: 1
+    path: Assets/Scenes/Level1/Level1Cinematic_Pt3.unity
+    guid: 6342b3d1105bb9a4391d6db8103ec01d
+  - enabled: 1
+    path: Assets/Scenes/EndingCredits.unity
+    guid: f751a4ca9e61934459780602ab16da6b
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02

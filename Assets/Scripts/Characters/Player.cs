@@ -2,12 +2,13 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour, ICombat
+public class Player : TrackableObject, ICombat
 {
     [SerializeField] Vector3 movement;
     [SerializeField] float speed = 2.0f;
     [SerializeField] HealthComponent health;
     [SerializeField] GameObject bullet;
+    [SerializeField] GameObject dynamite;
 
     [SerializeField] bool disableControls = false;
 
@@ -42,9 +43,6 @@ public class Player : MonoBehaviour, ICombat
             return;
         }
 
-        //if (!value.Get<bool>())
-        //    return;
-
         Debug.Log($"Player {gameObject.name} shooting...");
 
         if (bullet == null)
@@ -58,6 +56,29 @@ public class Player : MonoBehaviour, ICombat
         Bullet bulletComponent = newBullet.GetComponent<Bullet>();
         bulletComponent.objectsToIgnore.Add(gameObject);
         bulletComponent.instigator = this;
+        newBullet.transform.up = directionToShoot;
+    }
+
+    public void OnAbilityShoot(InputValue value)
+    {
+        if (disableControls)
+        {
+            return;
+        }
+
+        Debug.Log($"Player {gameObject.name} shooting...");
+
+        if (bullet == null)
+            return;
+
+        Vector2 screenPos = Mouse.current.position.ReadValue();
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 10f));
+
+        Vector3 directionToShoot = (worldPos - transform.position).normalized;
+        GameObject newBullet = Instantiate(dynamite, transform.position, Quaternion.Euler(directionToShoot.x, 0, directionToShoot.y));
+        Dynamite bulletComponent = newBullet.GetComponent<Dynamite>();
+        //bulletComponent.objectsToIgnore.Add(gameObject);
+        //bulletComponent.instigator = this;
         newBullet.transform.up = directionToShoot;
     }
 

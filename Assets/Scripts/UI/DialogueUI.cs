@@ -33,6 +33,8 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI speakerLine;
     int currentLineIndex = -1;
 
+    [SerializeField] bool startDialogueOnStart = true;
+
     [SerializeField] UnityEvent onDialogueEnd;
     [SerializeField] UnityEvent onDialogueStart;
 
@@ -60,7 +62,8 @@ public class DialogueUI : MonoBehaviour
             }
         }
 
-        StartDialogue();
+        if (startDialogueOnStart)
+            StartDialogue();
     }
 
     // Update is called once per frame

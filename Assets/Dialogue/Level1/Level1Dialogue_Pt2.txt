@@ -1,0 +1,4 @@
+SC0-UT: More hostiles approaching!
+Train Dude: There's too many of them! Quick, grab the dynamite! That should take care of them!
+SC0-UT: Dynamite available in cargo hold. Danger level: Extreme. Use with caution.
+Train Dude: Once you light it, you have to throw it at the hostiles. Be careful not to get too close, or you might get caught in the blast!

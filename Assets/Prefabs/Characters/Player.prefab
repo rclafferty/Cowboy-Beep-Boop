@@ -50,10 +50,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7e1650c68fa3e41a17662a34fac7d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  OnObjectDestroyed:
+    m_PersistentCalls:
+      m_Calls: []
   movement: {x: 0, y: 0, z: 0}
   speed: 2
   health: {fileID: 0}
   bullet: {fileID: 8269741586685767968, guid: d6b42c8f901282249a3a5492ef6da12d, type: 3}
+  dynamite: {fileID: 6638241477682820075, guid: 2f99b78ab6ddeb34a9529b42e3941d72, type: 3}
   disableControls: 0
 --- !u!114 &624314116557242322
 MonoBehaviour:

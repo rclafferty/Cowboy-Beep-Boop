@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Robber : MonoBehaviour, ICombat
+public class Robber : TrackableObject, ICombat
 {
     [SerializeField] Player player;
     [SerializeField] GameObject bullet;
