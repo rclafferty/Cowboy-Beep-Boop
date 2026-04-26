@@ -151,10 +151,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 608159166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.010376, y: 0.0015564}
-  m_SizeDelta: {x: 1919.3, y: 1080.4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.010375977, y: 0.0015869141}
+  m_SizeDelta: {x: -0.6999512, y: 0.4000244}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &245830363
 MonoBehaviour:
@@ -416,8 +416,8 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 0.5625
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -7042,8 +7042,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\nGame Team\n\nGame Design\t\tAustin Lafferty\nArt\t\t\t\tAustin Lafferty\nAnimation\t\t\tAustin
     Lafferty\nCharacter Design\t\tAustin Lafferty\nProgramming\t\tRobert Lafferty\nCinematics\t\t\tRobert
-    Lafferty\n\n\nQA Testers\n\nPerson 1\t\t\tPerson 2\nPerson 3\t\t\tPerson 4\n\n\nExternal\n\nBackground\t\tKenney
-    Assets\nhttps://www.kenney.nl/assets/roguelike-characters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMost
+    Lafferty\n\n\nExternal\n\nBackground\t\tKenney Assets\nhttps://www.kenney.nl/assets/roguelike-characters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMost
     importantly, thank you for playing.\nWe hope you enjoyed the game!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

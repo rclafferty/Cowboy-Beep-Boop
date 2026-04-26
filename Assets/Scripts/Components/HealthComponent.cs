@@ -38,7 +38,7 @@ public class HealthComponent : MonoBehaviour
         if (amount < 0)
             return;
 
-        Debug.Log($"{gameObject.name} healed for {amount} health!");
+        //Debug.Log($"{gameObject.name} healed for {amount} health!");
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         UpdateHealthbar();
     }
@@ -48,7 +48,7 @@ public class HealthComponent : MonoBehaviour
         if (amount < 0)
             return;
 
-        Debug.Log($"{gameObject.name} took {amount} damage!");
+        //Debug.Log($"{gameObject.name} took {amount} damage!");
         currentHealth = Mathf.Clamp(currentHealth - amount, 0, maxHealth);
         UpdateHealthbar();
 

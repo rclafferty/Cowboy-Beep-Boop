@@ -40,8 +40,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 25
-        value: 2591
+        time: 18
+        value: 1988.7787
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -79,7 +79,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 25
+    m_StopTime: 18
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -118,8 +118,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 25
-        value: 2591
+        time: 18
+        value: 1988.7787
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 25.5
+  m_Time: 20.016666666666666
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: d987c992e197c624c960f8f1512b0b5e, type: 2}

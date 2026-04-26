@@ -89,7 +89,7 @@ public class Robber : TrackableObject, ICombat
             return;
 
         health.TakeDamage(1);
-        Debug.Log($"Robber {gameObject.name} took {1} damage -- HP: {health.GetCurrentHealth()}");
+        //Debug.Log($"Robber {gameObject.name} took {1} damage -- HP: {health.GetCurrentHealth()}");
     }
 
     public void Die()

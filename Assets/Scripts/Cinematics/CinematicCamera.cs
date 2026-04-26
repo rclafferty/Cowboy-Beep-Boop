@@ -59,4 +59,25 @@ public class CinematicCamera : MonoBehaviour
         }
         transform.position = end; // Ensure the final position is set
     }
+
+    public void ExplosionCameraShake(float duration)
+    {
+        StartCoroutine(PlayExplosionShakeForDuration(duration));
+    }
+
+    IEnumerator PlayExplosionShakeForDuration(float duration)
+    {
+        CinemachineBasicMultiChannelPerlin noise = GetComponent<CinemachineBasicMultiChannelPerlin>();
+        if (noise != null)
+        {
+            noise.AmplitudeGain = 50;
+        }
+
+        yield return new WaitForSeconds(duration);
+
+        if (noise != null)
+        {
+            noise.AmplitudeGain = 0f;
+        }
+    }
 }

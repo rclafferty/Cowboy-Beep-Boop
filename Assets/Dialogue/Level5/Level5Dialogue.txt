@@ -1,0 +1,7 @@
+Train Dude: We're through the rough part of our journey. Once we make it past this bend, we'll be-
+ : *BOOM*
+Train Dude: What was that? Did we hit something?
+SC0-UT: WARNING! Engine failure detected. Danger level: Extreme. Please evacuate the train immediately.
+Train Dude: Everyone, evacuate the train! We need to get out of here before it explodes!
+SC0-UT: WARNING! Hostiles detected nearby. Caution advised.
+Train Dude: Oh no, not again! We need to find a safe place to hide and defend ourselves. Follow me, I'll lead you to safety!

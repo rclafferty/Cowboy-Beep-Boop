@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,11 +10,18 @@ public class Player : TrackableObject, ICombat
     [SerializeField] HealthComponent health;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject dynamite;
+    [SerializeField] float dynamiteCooldown = 5.0f;
 
     [SerializeField] bool disableControls = false;
 
     [SerializeField] GameObject dynamitePreview;
     bool showingDynamitePreview = false;
+    bool isDynamiteCooldown = false;
+    bool allPartsGathered = false;
+
+    int enginePartsGathered = 0;
+    bool interactingWithEngine = false;
+    Engine currentEngine = null;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,15 +52,16 @@ public class Player : TrackableObject, ICombat
     {
         transform.position += new Vector3(movement.x, movement.y) * Time.deltaTime;
 
-        if (showingDynamitePreview)
+        if (showingDynamitePreview && !isDynamiteCooldown)
         {
             Vector2 screenPos = Mouse.current.position.ReadValue();
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 10f));
+            worldPos.z = transform.position.z;
 
             Vector3 directionToShoot = (worldPos - transform.position).normalized;
             dynamitePreview.transform.up = directionToShoot;
 
-            const float fuseTime = 3;
+            const float fuseTime = 2;
             const float movementSpeed = 2;
 
             dynamitePreview.transform.position = transform.position + (directionToShoot * movementSpeed * fuseTime);
@@ -67,7 +76,7 @@ public class Player : TrackableObject, ICombat
         }
 
         movement = value.Get<Vector2>() * speed;
-        Debug.Log($"Player {gameObject.name} moving: {movement}");
+        //Debug.Log($"Player {gameObject.name} moving: {movement}");
     }
 
     public void OnShoot(InputValue value)
@@ -77,20 +86,32 @@ public class Player : TrackableObject, ICombat
             return;
         }
 
-        Debug.Log($"Player {gameObject.name} shooting...");
+        //Debug.Log($"Player {gameObject.name} shooting...");
 
         if (bullet == null)
             return;
 
-        Vector2 screenPos = Mouse.current.position.ReadValue();
-        Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 10f));
+        GameObject g = SpawnProjectile(bullet);
+        if (g == null)
+            return;
 
-        Vector3 directionToShoot = (worldPos - transform.position).normalized;
-        GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.Euler(directionToShoot.x, 0, directionToShoot.y));
-        Bullet bulletComponent = newBullet.GetComponent<Bullet>();
+        Bullet bulletComponent = g.GetComponent<Bullet>();
         bulletComponent.objectsToIgnore.Add(gameObject);
         bulletComponent.instigator = this;
-        newBullet.transform.up = directionToShoot;
+    }
+
+    public void OnInteract(InputValue value)
+    {
+        if (!interactingWithEngine)
+            return;
+
+        if (currentEngine == null)
+            return;
+
+        //if (!allPartsGathered)
+        //    return;
+
+        currentEngine.AddPart(enginePartsGathered);
     }
 
     public void OnAbilityShoot(InputValue value)
@@ -100,22 +121,42 @@ public class Player : TrackableObject, ICombat
             return;
         }
 
+        if (isDynamiteCooldown)
+        {
+            return;
+        }
+
         Debug.Log($"Player {gameObject.name} shooting...");
 
         if (dynamite == null)
             return;
 
-        Vector2 screenPos = Mouse.current.position.ReadValue();
-        Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 10f));
+        GameObject g = SpawnProjectile(dynamite);
+        if (g == null)
+            return;
 
-        Vector3 directionToShoot = (worldPos - transform.position).normalized;
-        GameObject newBullet = Instantiate(dynamite, transform.position, Quaternion.Euler(directionToShoot.x, 0, directionToShoot.y));
-        Dynamite bulletComponent = newBullet.GetComponent<Dynamite>();
-        bulletComponent.IsDud = false;
-        newBullet.transform.up = directionToShoot;
+        Dynamite dynamiteComponent = g.GetComponent<Dynamite>();
+        dynamiteComponent.IsDud = false;
 
         showingDynamitePreview = false;
         dynamitePreview.SetActive(false);
+        StartCoroutine(StartDynamiteCooldown());
+    }
+
+    GameObject SpawnProjectile(GameObject prefab)
+    {
+        if (prefab == null)
+            return null;
+
+        Vector2 screenPos = Mouse.current.position.ReadValue();
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 10f));
+        worldPos.z = transform.position.z;
+
+        Vector3 directionToShoot = (worldPos - transform.position).normalized;
+        GameObject newProjectile = Instantiate(prefab, transform.position, Quaternion.identity);
+        newProjectile.transform.up = directionToShoot;
+
+        return newProjectile;
     }
 
     public void OnAbilityShootPrep(InputValue value)
@@ -125,33 +166,15 @@ public class Player : TrackableObject, ICombat
             return;
         }
 
+        if (isDynamiteCooldown)
+        {
+            return;
+        }
+
         Debug.Log($"Player {gameObject.name} aiming dynamite...");
 
         if (dynamite == null)
             return;
-
-        //Vector2 screenPos = Mouse.current.position.ReadValue();
-        //Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 10f));
-
-        //Vector3 directionToShoot = (worldPos - transform.position).normalized;
-        //GameObject newBullet = Instantiate(dynamite, transform.position, Quaternion.Euler(directionToShoot.x, 0, directionToShoot.y));
-        //Dynamite bulletComponent = newBullet.GetComponent<Dynamite>();
-        //if (bulletComponent == null)
-        //    return;
-
-        //bulletComponent.IsDud = true;
-        //newBullet.transform.up = directionToShoot;
-
-        //SpriteRenderer renderer = newBullet.GetComponent<SpriteRenderer>();
-        //if (renderer == null)
-        //{
-        //    // TODO: ERROR
-        //    return;
-        //}
-
-        //Color c = renderer.color;
-        //c.a = 0.4f;
-        //renderer.color = c;
 
         showingDynamitePreview = true;
         dynamitePreview.SetActive(true);
@@ -159,15 +182,64 @@ public class Player : TrackableObject, ICombat
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        bool isBullet = HandleBulletTriggerEvent(collision);
+        if (isBullet)
+            return;
+
+        bool isEnginePart = HandleEnginePartTriggerEvent(collision);
+        if (isEnginePart)
+        {
+            allPartsGathered = CheckIfAllEnginePartsGathered();
+        }
+
+        Engine engine = collision.GetComponent<Engine>();
+        if (engine != null)
+        {
+            currentEngine = engine;
+            interactingWithEngine = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Engine engine = collision.GetComponent<Engine>();
+        if (engine != null)
+        {
+            interactingWithEngine = false;
+        }
+    }
+
+    bool HandleBulletTriggerEvent(Collider2D collision)
+    {
         Bullet bulletComp = collision.GetComponent<Bullet>();
         if (bulletComp == null)
-            return;
+            return false;
 
         if (bulletComp.instigator.GetTeam() == GetTeam())
-            return;
+            return false;
 
         health.TakeDamage(1);
-        Debug.Log($"Player {gameObject.name} took {1} damage -- HP: {health.GetCurrentHealth()}");
+        //Debug.Log($"Player {gameObject.name} took {1} damage -- HP: {health.GetCurrentHealth()}");
+
+        return true;
+    }
+
+    bool HandleEnginePartTriggerEvent(Collider2D collision)
+    {
+        EnginePart enginePartComp = collision.GetComponent<EnginePart>();
+        if (enginePartComp == null)
+            return false;
+
+        enginePartsGathered++;
+        Debug.Log($"Player {gameObject.name} picked up 1 engine part.");
+        Destroy(collision.gameObject);
+
+        return true;
+    }
+
+    bool CheckIfAllEnginePartsGathered()
+    {
+        return enginePartsGathered >= 5;
     }
 
     public int GetTeam()
@@ -188,5 +260,12 @@ public class Player : TrackableObject, ICombat
     public void Die()
     {
         Debug.Log($"Player {gameObject.name} is dead!");
+    }
+
+    IEnumerator StartDynamiteCooldown()
+    {
+        isDynamiteCooldown = true;
+        yield return new WaitForSeconds(dynamiteCooldown);
+        isDynamiteCooldown = false;
     }
 }

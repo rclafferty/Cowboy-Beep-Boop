@@ -484,7 +484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 993516276707506261, guid: 4e1d3336f1875974f8010b1958f38652, type: 3}
       propertyPath: nextSceneName
-      value: EndingCredits
+      value: Level5Cinematic
       objectReference: {fileID: 0}
     - target: {fileID: 3521025133264101381, guid: 4e1d3336f1875974f8010b1958f38652, type: 3}
       propertyPath: m_Name
@@ -6756,7 +6756,7 @@ PrefabInstance:
     - target: {fileID: 2288444071351035227, guid: e83e83eb254b8fe4a87ef3c5621eb470, type: 3}
       propertyPath: dialogueFile
       value: 
-      objectReference: {fileID: 4900000, guid: 36935bc4aeb60bc42bc63014f886275c, type: 3}
+      objectReference: {fileID: 4900000, guid: 66d89cd8f213a674aa2bb351294101e9, type: 3}
     - target: {fileID: 2288444071351035227, guid: e83e83eb254b8fe4a87ef3c5621eb470, type: 3}
       propertyPath: mountainIndexEnd
       value: -1

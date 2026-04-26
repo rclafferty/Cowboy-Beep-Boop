@@ -58,7 +58,9 @@ MonoBehaviour:
   health: {fileID: 0}
   bullet: {fileID: 8269741586685767968, guid: d6b42c8f901282249a3a5492ef6da12d, type: 3}
   dynamite: {fileID: 6638241477682820075, guid: 2f99b78ab6ddeb34a9529b42e3941d72, type: 3}
+  dynamiteCooldown: 5
   disableControls: 0
+  dynamitePreview: {fileID: 0}
 --- !u!114 &624314116557242322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +148,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &8151335742537961018
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -177,7 +179,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
