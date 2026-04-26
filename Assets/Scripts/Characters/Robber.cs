@@ -65,7 +65,7 @@ public class Robber : TrackableObject, ICombat
             return;
 
         Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
-        Debug.Log($"Robber {gameObject.name} moving towards player at direction {directionToPlayer}");
+        //Debug.Log($"Robber {gameObject.name} moving towards player at direction {directionToPlayer}");
         animationController.SetFloat("Walk-X", directionToPlayer.x);
         animationController.SetFloat("Walk-Y", directionToPlayer.y);
 
@@ -145,6 +145,7 @@ public class Robber : TrackableObject, ICombat
 
         isDead = true;
         animationController.SetTrigger("Die");
+        OnDestroy();
 
         //Destroy(gameObject);
     }

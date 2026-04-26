@@ -17,7 +17,7 @@ public class TrackableObject : MonoBehaviour
         
     }
 
-    void OnDestroy()
+    protected void OnDestroy()
     {
         OnObjectDestroyed?.Invoke();
     }

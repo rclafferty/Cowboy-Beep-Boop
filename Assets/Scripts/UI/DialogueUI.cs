@@ -90,7 +90,7 @@ public class DialogueUI : MonoBehaviour
 
     public void SkipCutscene()
     {
-        GameObject.FindAnyObjectByType<OpeningSequence>()?.NextScene();
+        onDialogueEnd?.Invoke();
     }
 
     public void NextLine()

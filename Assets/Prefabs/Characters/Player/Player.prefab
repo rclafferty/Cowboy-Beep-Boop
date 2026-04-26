@@ -125,6 +125,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   disableHealthbar: 0
+  damageScalar: 0.8
 --- !u!50 &2824826537099167853
 Rigidbody2D:
   serializedVersion: 5

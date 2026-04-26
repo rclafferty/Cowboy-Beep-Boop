@@ -46,9 +46,10 @@ public class SpawnManager : MonoBehaviour
         SpawnedEntities++;
     }
 
-    void OnEntityDied()
+    public void OnEntityDied()
     {
         SpawnedEntities--;
+        Debug.Log($"An entity died! Remaining: {SpawnedEntities}");
 
         if (SpawnedEntities == 0)
         {

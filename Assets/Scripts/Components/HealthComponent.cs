@@ -10,6 +10,8 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] public UnityEvent OnDeath;
     [SerializeField] bool disableHealthbar = false;
 
+    [SerializeField] float damageScalar = 1.0f;
+
     float initialScaleX = 1.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
