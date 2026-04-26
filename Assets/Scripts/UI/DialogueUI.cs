@@ -16,6 +16,14 @@ public class DialogueUI : MonoBehaviour
     }
 
     [Serializable]
+    struct DialogueData
+    {
+        public string speaker;
+        public Sprite profileImage;
+        public string displayName;
+    }
+
+    [Serializable]
     struct DialogueEvent
     {
         public int lineIndex;
@@ -24,6 +32,7 @@ public class DialogueUI : MonoBehaviour
 
     [SerializeField] List<DialogueLine> allDialogueLines;
     [SerializeField] List<DialogueEvent> allDialogueEvents;
+    [SerializeField] List<DialogueData> allDialogueData;
     [SerializeField] TextAsset dialogueFile;
 
     [SerializeField] bool typewriterEffect = true;
@@ -31,6 +40,7 @@ public class DialogueUI : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI speakerName;
     [SerializeField] TextMeshProUGUI speakerLine;
+    [SerializeField] Image speakerImage;
     int currentLineIndex = -1;
 
     [SerializeField] bool startDialogueOnStart = true;
@@ -78,6 +88,11 @@ public class DialogueUI : MonoBehaviour
         NextLine();
     }
 
+    public void SkipCutscene()
+    {
+        GameObject.FindAnyObjectByType<OpeningSequence>()?.NextScene();
+    }
+
     public void NextLine()
     {
         if (currentLineIndex >= allDialogueLines.Count - 1)
@@ -115,6 +130,16 @@ public class DialogueUI : MonoBehaviour
         NextLine();
     }
 
+    DialogueData GetDialogueData(string speaker)
+    {
+        foreach (DialogueData data in allDialogueData)
+        {
+            if (data.speaker == speaker)
+                return data;
+        }
+        return default;
+    }
+
     IEnumerator DisplayNextLine()
     {
         yield return new WaitForEndOfFrame();
@@ -122,23 +147,17 @@ public class DialogueUI : MonoBehaviour
         DialogueLine line = GetLine();
         speakerLine.text = "";
 
-        //if (currentLineIndex == mountainIndexStart)
-        //{
-        //    CinematicCamera camera = FindFirstObjectByType<CinematicCamera>();
-        //    if (camera)
-        //    {
-        //        preMountainLocation = camera.transform.position;
-        //        camera.LerpToPosition(mountainLocation, 2f);
-        //    }
-        //}
-        //else if (currentLineIndex == mountainIndexEnd)
-        //{
-        //    CinematicCamera camera = FindFirstObjectByType<CinematicCamera>();
-        //    if (camera)
-        //    {
-        //        camera.LerpToPosition(preMountainLocation, 2f);
-        //    }
-        //}
+        DialogueData data = GetDialogueData(line.speaker);
+        if (!string.IsNullOrEmpty(data.displayName))
+        {
+            speakerName.text = data.displayName;
+        }
+        else
+        {
+            speakerName.text = line.speaker;
+        }
+
+        speakerImage.sprite = data.profileImage;
 
         if (allDialogueEvents != null)
         {
@@ -153,7 +172,6 @@ public class DialogueUI : MonoBehaviour
 
         for (int i = 0; i < line.line.Length; i++)
         {
-            speakerName.text = line.speaker;
             speakerLine.text += line.line[i];
             yield return new WaitForSeconds(typewriterSpeed);
         }

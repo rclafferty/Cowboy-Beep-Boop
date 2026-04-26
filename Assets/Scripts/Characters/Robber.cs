@@ -10,6 +10,8 @@ public class Robber : TrackableObject, ICombat
 
     [SerializeField] float shootDistance = 3f;
     [SerializeField] HealthComponent health;
+
+    [SerializeField] bool isDisabled = false;
     float shootCooldown = 0.5f;
     float currentShootCooldown = 0f;
 
@@ -66,7 +68,9 @@ public class Robber : TrackableObject, ICombat
         Debug.Log($"Robber {gameObject.name} moving towards player at direction {directionToPlayer}");
         animationController.SetFloat("Walk-X", directionToPlayer.x);
         animationController.SetFloat("Walk-Y", directionToPlayer.y);
-        transform.position += directionToPlayer * Time.deltaTime;
+
+        if (!isDisabled)
+            transform.position += directionToPlayer * Time.deltaTime;
     }
 
     void Shoot()

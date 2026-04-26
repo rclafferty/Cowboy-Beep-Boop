@@ -78,6 +78,24 @@ public class Player : TrackableObject, ICombat
         }
     }
 
+    public void AnimWalkRight()
+    {
+        animationController.SetFloat("Walk-X", 1);
+        animationController.SetFloat("Walk-Y", 0);
+    }
+
+    public void AnimWalkUp()
+    {
+        animationController.SetFloat("Walk-X", 0);
+        animationController.SetFloat("Walk-Y", 1);
+    }
+
+    public void AnimWalkStop()
+    {
+        animationController.SetFloat("Walk-X", 0);
+        animationController.SetFloat("Walk-Y", 0);
+    }
+
     public void OnMove(InputValue value)
     {
         if (disableControls)

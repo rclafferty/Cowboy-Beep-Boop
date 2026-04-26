@@ -31,6 +31,13 @@ public class Bullet : MonoBehaviour
         if (combat.GetTeam() == instigator.GetTeam())
             return;
 
+        HealthComponent health = collision.gameObject.GetComponent<HealthComponent>();
+        if (health == null)
+            return;
+
+        if (!health.IsAlive)
+            return;
+
         Destroy(gameObject);
     }
 }
