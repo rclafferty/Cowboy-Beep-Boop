@@ -19545,10 +19545,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2565389191408493399, guid: 6227b4f37f20f424390b85a7a8034a59, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: fbd81e2fa0fe083448385f195334b05d, type: 2}
     - target: {fileID: 5895026864049734588, guid: 6227b4f37f20f424390b85a7a8034a59, type: 3}
       propertyPath: disableHealthbar
       value: 0

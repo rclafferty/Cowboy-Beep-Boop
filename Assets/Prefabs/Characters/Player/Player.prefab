@@ -54,6 +54,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   animationController: {fileID: 2565389191408493399}
+  deathUIPrefab: {fileID: 6049826798008804596, guid: 25c395ac0756e8b4ea6ec7a9a4be1223, type: 3}
   movement: {x: 0, y: 0, z: 0}
   speed: 2
   health: {fileID: 0}
@@ -62,7 +63,7 @@ MonoBehaviour:
   bulletCooldown: 0.1
   dynamiteCooldown: 5
   disableControls: 0
-  disableShootAnyDirection: 0
+  disableShootAnyDirection: 1
   dynamitePreview: {fileID: 0}
 --- !u!114 &624314116557242322
 MonoBehaviour:

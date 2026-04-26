@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class Player : TrackableObject, ICombat
 {
     [SerializeField] Animator animationController;
+    [SerializeField] GameObject deathUIPrefab;
 
     [SerializeField] Vector3 movement;
     [SerializeField] float speed = 2.0f;
@@ -316,6 +317,8 @@ public class Player : TrackableObject, ICombat
         movement = Vector3.zero;
         Debug.Log($"Player {gameObject.name} is dead!");
         animationController.SetTrigger("Die");
+
+        Instantiate(deathUIPrefab);
     }
 
     IEnumerator StartBulletCooldown()
