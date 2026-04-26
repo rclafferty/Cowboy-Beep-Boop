@@ -470,177 +470,6 @@ Transform:
   - {fileID: 925526854}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &775131788
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 24.22723
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.279598
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999556
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.009423576
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757997760462524270, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_Name
-      value: Train Track (7)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
---- !u!1001 &778021589
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 17.037785
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.413546
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999556
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.009423576
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757997760462524270, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_Name
-      value: Train Track (6)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
---- !u!1001 &793058794
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999556
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.009423576
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757997760462524270, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_Name
-      value: Train Track
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
 --- !u!1 &794947625
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,63 +722,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd84c674904ae6b4c99f7789fc6815ec, type: 3}
---- !u!1001 &916900163
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.838346
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.547823
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999556
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.009423576
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757997760462524270, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_Name
-      value: Train Track (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
 --- !u!1 &925526853
 GameObject:
   m_ObjectHideFlags: 0
@@ -6764,177 +6536,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6227b4f37f20f424390b85a7a8034a59, type: 3}
---- !u!1001 &1092677615
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -18.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999556
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.009423576
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757997760462524270, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_Name
-      value: Train Track (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
---- !u!1001 &1121879474
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -25.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999556
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.009423576
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757997760462524270, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_Name
-      value: Train Track (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
---- !u!1001 &1190850399
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.6488972
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.681773
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999556
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.009423576
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757997760462524270, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
-      propertyPath: m_Name
-      value: Train Track (5)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
 --- !u!1 &1237746700
 GameObject:
   m_ObjectHideFlags: 0
@@ -8726,7 +8327,7 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &1891571695
+--- !u!1001 &1877236967
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8734,55 +8335,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
+    - target: {fileID: 4124408212491047748, guid: 77081fc65e454f340a9bb4b29f40478b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.550544
+      value: 8.19
       objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
+    - target: {fileID: 4124408212491047748, guid: 77081fc65e454f340a9bb4b29f40478b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.816051
+      value: -8.64
       objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
+    - target: {fileID: 4124408212491047748, guid: 77081fc65e454f340a9bb4b29f40478b, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
+    - target: {fileID: 4124408212491047748, guid: 77081fc65e454f340a9bb4b29f40478b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999556
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
+    - target: {fileID: 4124408212491047748, guid: 77081fc65e454f340a9bb4b29f40478b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
+    - target: {fileID: 4124408212491047748, guid: 77081fc65e454f340a9bb4b29f40478b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
+    - target: {fileID: 4124408212491047748, guid: 77081fc65e454f340a9bb4b29f40478b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.009423576
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
+    - target: {fileID: 4124408212491047748, guid: 77081fc65e454f340a9bb4b29f40478b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
+    - target: {fileID: 4124408212491047748, guid: 77081fc65e454f340a9bb4b29f40478b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5440082457742688410, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
+    - target: {fileID: 4124408212491047748, guid: 77081fc65e454f340a9bb4b29f40478b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.08
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5757997760462524270, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
+    - target: {fileID: 5178768257034590030, guid: 77081fc65e454f340a9bb4b29f40478b, type: 3}
       propertyPath: m_Name
-      value: Train Track (4)
+      value: TrainRail
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0ab08c685906bf240b69e09a6ce30fe3, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 77081fc65e454f340a9bb4b29f40478b, type: 3}
 --- !u!1001 &1008571030896088280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8874,13 +8475,6 @@ SceneRoots:
   - {fileID: 194991465}
   - {fileID: 157718568}
   - {fileID: 1008571030896088280}
-  - {fileID: 775131788}
-  - {fileID: 778021589}
-  - {fileID: 1190850399}
-  - {fileID: 1891571695}
-  - {fileID: 916900163}
   - {fileID: 831203541}
-  - {fileID: 1121879474}
-  - {fileID: 1092677615}
-  - {fileID: 793058794}
   - {fileID: 641460428}
+  - {fileID: 1877236967}
