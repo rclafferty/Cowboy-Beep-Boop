@@ -51,7 +51,23 @@ public class SpawnManager : MonoBehaviour
         SpawnedEntities--;
         Debug.Log($"An entity died! Remaining: {SpawnedEntities}");
 
-        if (SpawnedEntities == 0)
+        int numRemaining = 0;
+        foreach (TrackableObject t in prefabsToTrack)
+        {
+            if (t == null)
+                continue;
+
+            HealthComponent health = t.GetComponent<HealthComponent>();
+            if (health == null)
+                continue;
+
+            if (!health.IsAlive)
+                continue;
+
+            numRemaining++;
+        }
+
+        if (numRemaining == 0)
         {
             OnAllEntitiesDestroyed?.Invoke();
         }

@@ -124,6 +124,9 @@ public class Robber : TrackableObject, ICombat
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (health == null)
+            return;
+
         if (!health.IsAlive)
             return;
 
