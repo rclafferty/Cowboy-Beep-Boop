@@ -10,10 +10,13 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] public UnityEvent OnDeath;
     [SerializeField] bool disableHealthbar = false;
 
+    float initialScaleX = 1.0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentHealth = maxHealth;
+        initialScaleX = healthBar.transform.localScale.x;
         UpdateHealthbar();
     }
 
@@ -67,7 +70,9 @@ public class HealthComponent : MonoBehaviour
         }
 
         Vector3 healthbarScale = healthBar.transform.localScale;
-        healthbarScale.x = (float)currentHealth / maxHealth;
+        healthbarScale.x = ((float)currentHealth / maxHealth) * initialScaleX;
         healthBar.transform.localScale = healthbarScale;
     }
+
+    public bool IsAlive { get { return currentHealth > 0; } }
 }

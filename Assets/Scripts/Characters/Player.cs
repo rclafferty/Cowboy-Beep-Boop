@@ -5,23 +5,30 @@ using UnityEngine.InputSystem;
 
 public class Player : TrackableObject, ICombat
 {
+    [SerializeField] Animator animationController;
+
     [SerializeField] Vector3 movement;
     [SerializeField] float speed = 2.0f;
     [SerializeField] HealthComponent health;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject dynamite;
+    [SerializeField] float bulletCooldown = 0.1f;
     [SerializeField] float dynamiteCooldown = 5.0f;
 
     [SerializeField] bool disableControls = false;
+    [SerializeField] bool disableShootAnyDirection = false;
 
     [SerializeField] GameObject dynamitePreview;
     bool showingDynamitePreview = false;
+    bool isBulletCooldown = false;
     bool isDynamiteCooldown = false;
     bool allPartsGathered = false;
 
     int enginePartsGathered = 0;
     bool interactingWithEngine = false;
     Engine currentEngine = null;
+
+    bool isDead = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,6 +52,9 @@ public class Player : TrackableObject, ICombat
                 renderer.color = c;
             }
         }
+
+        if (animationController == null)
+            animationController = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -77,6 +87,14 @@ public class Player : TrackableObject, ICombat
 
         movement = value.Get<Vector2>() * speed;
         //Debug.Log($"Player {gameObject.name} moving: {movement}");
+
+        //if (movement == Vector3.zero)
+        //{
+        //    return;
+        //}
+
+        animationController.SetFloat("Walk-X", movement.x);
+        animationController.SetFloat("Walk-Y", movement.y);
     }
 
     public void OnShoot(InputValue value)
@@ -86,9 +104,10 @@ public class Player : TrackableObject, ICombat
             return;
         }
 
-        //Debug.Log($"Player {gameObject.name} shooting...");
-
         if (bullet == null)
+            return;
+
+        if (isBulletCooldown)
             return;
 
         GameObject g = SpawnProjectile(bullet);
@@ -98,6 +117,9 @@ public class Player : TrackableObject, ICombat
         Bullet bulletComponent = g.GetComponent<Bullet>();
         bulletComponent.objectsToIgnore.Add(gameObject);
         bulletComponent.instigator = this;
+
+        animationController.SetTrigger("Shooting");
+        StartCoroutine(StartBulletCooldown());
     }
 
     public void OnInteract(InputValue value)
@@ -148,14 +170,23 @@ public class Player : TrackableObject, ICombat
         if (prefab == null)
             return null;
 
-        Vector2 screenPos = Mouse.current.position.ReadValue();
-        Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 10f));
-        worldPos.z = transform.position.z;
+        GameObject newProjectile = null;
+        if (disableShootAnyDirection)
+        {
+            Vector3 directionToShoot = movement == Vector3.zero ? Vector3.down : movement.normalized;
+            newProjectile = Instantiate(prefab, transform.position, Quaternion.identity);
+            newProjectile.transform.up = directionToShoot;
+        }
+        else
+        {
+            Vector2 screenPos = Mouse.current.position.ReadValue();
+            Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 10f));
+            worldPos.z = transform.position.z;
 
-        Vector3 directionToShoot = (worldPos - transform.position).normalized;
-        GameObject newProjectile = Instantiate(prefab, transform.position, Quaternion.identity);
-        newProjectile.transform.up = directionToShoot;
-
+            Vector3 directionToShoot = (worldPos - transform.position).normalized;
+            newProjectile = Instantiate(prefab, transform.position, Quaternion.identity);
+            newProjectile.transform.up = directionToShoot;
+        }
         return newProjectile;
     }
 
@@ -259,7 +290,21 @@ public class Player : TrackableObject, ICombat
 
     public void Die()
     {
+        if (isDead)
+            return;
+
+        isDead = true;
+        disableControls = true;
+        movement = Vector3.zero;
         Debug.Log($"Player {gameObject.name} is dead!");
+        animationController.SetTrigger("Die");
+    }
+
+    IEnumerator StartBulletCooldown()
+    {
+        isBulletCooldown = true;
+        yield return new WaitForSeconds(bulletCooldown);
+        isBulletCooldown = false;
     }
 
     IEnumerator StartDynamiteCooldown()
