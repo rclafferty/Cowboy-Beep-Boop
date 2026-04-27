@@ -90,7 +90,9 @@ public class DialogueUI : MonoBehaviour
 
     public void SkipCutscene()
     {
-        onDialogueEnd?.Invoke();
+        //onDialogueEnd?.Invoke();
+        StopAllCoroutines();
+        NextLine();
     }
 
     public void NextLine()
